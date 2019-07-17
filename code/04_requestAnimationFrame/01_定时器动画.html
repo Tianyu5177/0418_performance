@@ -11,11 +11,7 @@
     #test {
       width: 200px;
       height: 200px;
-      background: green;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 20px;
+      background: skyblue;
     }
   </style>
 </head>
@@ -26,7 +22,7 @@
 <script type="text/javascript">
   let i = 0
   setInterval(function () {
-    i++
+    i = i+1
     document.getElementById('test').style.transform = `translateX(${i}px)`
   },16)
 </script>
