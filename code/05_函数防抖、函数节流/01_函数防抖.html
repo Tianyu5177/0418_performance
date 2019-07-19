@@ -17,6 +17,25 @@
   *   应用：搜索时等用户完整输入内容后再发送查询请求。
   * */
   
+  let inputDOM = document.getElementById('user_input')
+  let id
+  inputDOM.addEventListener('keyup',function () {
+    //1.获取用户输入
+    let value = inputDOM.value
+    if(id){
+      clearTimeout(id)
+    }
+    id = setTimeout(function () {
+      //2.发送请求
+      mockSendAjax(value)
+    },300)
+  })
+  
+  //模拟发送Ajax请求的函数
+  function mockSendAjax(data) {
+    console.log(`sendAjax-----------${data}`)
+  }
+  
   
 
 </script>

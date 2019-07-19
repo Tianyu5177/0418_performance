@@ -27,6 +27,22 @@
 </div>
 <!--requestAnimationFrame动画.html-->
 <script type="text/javascript">
+  let i = 0
+  let id
+  requestAnimationFrame(demo)
+  
+  function demo() {
+    //console.log(arguments)
+    i++
+    document.getElementById('test').style.transform = `translateX(${i}px)`
+    id = requestAnimationFrame(demo)
+    console.log(id)
+  }
+  
+  setTimeout(function () {
+    cancelAnimationFrame(id)
+  },2000)
+  
 
 </script>
 </body>
