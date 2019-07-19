@@ -8,6 +8,10 @@
 <input type="text" id="val">
 <script type="text/javascript">
 
+  window.addEventListener('storage',function (event) {
+    document.getElementById('val').value = event.newValue
+  })
+
   
 </script>
 </body>
