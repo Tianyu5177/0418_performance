@@ -2,16 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>sessionStorage测试</title>
 </head>
 <body>
 
 <button id="btn1">保存数据</button>
 <button id="btn2">读取数据</button>
 <button id="btn3">删除数据</button>
+<button id="btn4">清空数据</button>
 
 <script type="text/javascript">
 
+  let btn1 = document.getElementById('btn1')
+  let btn2= document.getElementById('btn2')
+  let btn3 = document.getElementById('btn3')
+  let btn4 = document.getElementById('btn4')
+  
+  let p1 = {
+    name:'kobe',
+    age:18,
+    sex:'男'
+  }
+  
+  
+  btn1.onclick = function () {
+    sessionStorage.setItem('person',JSON.stringify(p1))
+  }
+
+  btn2.onclick = function () {
+    let data = sessionStorage.getItem('person')
+    console.log(data,typeof data,JSON.parse(data))
+  }
+
+  btn3.onclick = function () {
+    let data = sessionStorage.removeItem('person')
+  }
+
+  btn4.onclick = function () {
+    let data = sessionStorage.clear()
+  }
+  
+  
 
 </script>
 </body>

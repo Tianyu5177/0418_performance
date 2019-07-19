@@ -16,9 +16,27 @@
   *   概念：设定一个特定的时间，让函数在特定的时间内只执行一次，不会频繁执行
   *   举例：fps游戏，鼠标按住不松手，子弹也不会连成一条线
   *   实现：定时器、标识
-  *   需求：在鼠标滚轮滚动的时候，每隔2秒钟，打印一次
+  *   需求：在鼠标滚轮滚动的时候，每隔1秒钟，打印一次
   *   
   * */
+  
+  let body = document.getElementsByTagName('body')[0]
+  let isLog = true
+  
+  body.onscroll = function () {
+    //如果能够进入该判断，以为着可以打印
+    if(isLog){
+      //标识置为不可打印
+      isLog = false
+      //进行打印
+      console.log(1)
+      //一秒钟之后重新置为可以打印
+      setTimeout(function () {
+        isLog = true
+      },1000)
+    }
+    
+  }
 
 </script>
 </body>
